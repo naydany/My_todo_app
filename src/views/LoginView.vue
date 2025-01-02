@@ -1,7 +1,7 @@
 <template>
-  <v-container>
+  <v-container>edfdfsdf
     <v-card class="pa-4 mx-auto" width="400">
-      <v-card-title class="text-center">Login here</v-card-title>
+      <v-card-title class="text-center">Login heree</v-card-title>
       <v-card-item>
         <v-form @submit.prevent="submit">
           <v-text-field
@@ -41,7 +41,7 @@
       </v-card-item>
       <v-card-action>
         <div class="mx-4">
-          <v-btn block to="/register"> Register </v-btn>
+          <v-btn block to="/register"> Registerffhgfh </v-btn>
         </div>
       </v-card-action>
     </v-card>
