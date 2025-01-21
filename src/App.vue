@@ -5,7 +5,7 @@
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
       <v-toolbar-title>
-        <RouterLink to="/">Vuetify</RouterLink>
+        <RouterLink to="/">Home</RouterLink>
       </v-toolbar-title>
 
       <v-spacer></v-spacer>

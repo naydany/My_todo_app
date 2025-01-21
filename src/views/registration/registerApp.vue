@@ -1,9 +1,20 @@
 <template>
+  <div class="ml-6 mt-6" @click="back">
+      <v-icon>mdi-arrow-left</v-icon>
+  </div>
   <v-container>
     <v-card class="pa-4 mx-auto" width="400">
-      <v-card-title class="text-center">Login heree</v-card-title>
+      <v-card-title class="text-center"> Register </v-card-title>
       <v-card-item>
         <v-form @submit.prevent="submit">
+          <v-text-field
+            v-model="form.name"
+            label="Name"
+            variant="underlined"
+            type="text"
+            append-inner-icon="mdi-text"
+          >
+          </v-text-field>
           <v-text-field
             v-model="form.email"
             label="Email address"
@@ -21,14 +32,6 @@
             append-inner-icon="mdi-key"
           >
           </v-text-field>
-          <v-checkbox
-            v-model="form.remember"
-            color="success"
-            label="Remember me"
-            value="Data has been saved"
-            hide-details
-          >
-          </v-checkbox>
           <v-btn class="mt-2" color="blue-darken-3" type="submit" block>
             <v-progress-circular
               v-if="isloading"
@@ -39,13 +42,7 @@
           </v-btn>
         </v-form>
       </v-card-item>
-      <v-card-action>
-        <div class="mx-4">
-          <v-btn block to="/register"> Register </v-btn>
-        </div>
-      </v-card-action>
     </v-card>
-    {{form.email}}
   </v-container>
 </template>
 
@@ -53,9 +50,14 @@
 import {ref} from "vue";
 
 const form = ref({
+  name: "",
   email: "",
   password: "",
 });
+
+export default {
+  methods:
+}
 const isloading = ref(false);
 
 function submit() {
@@ -66,4 +68,5 @@ function submit() {
         alert(JSON.stringify(form.value))
     }, 3000);
 }
+
 </script>

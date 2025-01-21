@@ -1,36 +1,50 @@
 <template>
+  <div>
+  <v-card-title class="text-center mt-2">Product</v-card-title>
   <v-card
-    class="mx-auto"
-    max-width="400"
+    class="mx-auto mt-4"
+    max-width="1400"
   >
-    <!-- <v-img
-      class="align-end text-white"
-      height="200"
-      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-      cover
-    >
-      <v-card-title>Top 10 Australian beaches</v-card-title>
-    </v-img> -->
-
-    <v-card-subtitle class="pt-4">
-      Number 10
-    </v-card-subtitle>
-
-    <v-card-text>
-      <div>Whitehaven Beach</div>
-
-      <div>Whitsunday Island, Whitsunday Islands</div>
-    </v-card-text>
-
-    <v-card-actions>
-      <v-btn color="orange" text="Share"></v-btn>
-
-      <v-btn color="orange" text="Explore"></v-btn>
-    </v-card-actions>
+  <v-card-title>Alikhomtor</v-card-title>
+    <v-container fluid>
+      <v-row dense>
+        <v-col
+          v-for="card in cards"
+          :key="card.title"
+          :cols="card.flex"
+        >
+          <v-card>
+            <v-img
+              :src="card.src"
+              class="align-end"
+              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+              height="200px"
+              cover
+            >
+              <v-card-title class="text-white" v-text="card.title"></v-card-title>
+            </v-img>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-card>
+  </div>
 </template>
+
 <script>
 export default {
-    name:"product",
+  name: 'project',
+
+   data: () => ({
+      cards: [
+        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 5 },
+        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 3 },
+        { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 4},
+        { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 2 },
+        { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
+        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 2 },
+        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 2 },
+      ],
+    }),
 }
 </script>
